@@ -1,0 +1,69 @@
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: devopsified
+  namespace: devopsified
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: devopsified
+
+  template:
+    metadata:
+      labels:
+        app: devopsified
+
+    spec:
+      automountServiceAccountToken: false
+
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 65532
+        runAsGroup: 65532
+
+      containers:
+        - name: devopsified
+          image: docker.io/library/devopsified:v1
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - name: http
+              containerPort: 8080
+
+          envFrom:
+            - configMapRef:
+                name: devopsified-config
+
+          resources:
+            requests:
+              cpu: "25m"
+              memory: "32Mi"
+            limits:
+              cpu: "200m"
+              memory: "128Mi"
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 10
+
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: http
+            initialDelaySeconds: 2
+            periodSeconds: 5
+
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL

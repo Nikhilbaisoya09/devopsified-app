@@ -1,0 +1,19 @@
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: devopsified
+  namespace: devopsified
+
+spec:
+  type: ClusterIP
+
+  selector:
+    app: devopsified
+
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
