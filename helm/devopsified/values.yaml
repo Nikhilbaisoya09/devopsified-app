@@ -1,0 +1,23 @@
+﻿replicaCount: 1
+
+image:
+  repository: docker.io/library/devopsified
+  tag: "v1"
+  pullPolicy: IfNotPresent
+
+config:
+  APP_ENV: "kubernetes"
+  APP_VERSION: "1.0.0"
+  PORT: "8080"
+
+service:
+  port: 80
+  targetPort: 8080
+
+resources:
+  requests:
+    cpu: "25m"
+    memory: "32Mi"
+  limits:
+    cpu: "200m"
+    memory: "128Mi"
