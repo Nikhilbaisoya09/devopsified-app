@@ -1,0 +1,11 @@
+
+.git
+.github
+.vscode
+*.exe
+*.test
+*.out
+.env
+.env.*
+bin/
+dist/
