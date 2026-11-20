@@ -1,4 +1,3 @@
-       
 # Stage 1: Build Go application with docker
 FROM golang:1.27-alpine AS builder
 
@@ -16,6 +15,9 @@ RUN CGO_ENABLED=0 GOOS=linux go build \
 
 # Stage 2: Production runtime
 FROM gcr.io/distroless/static-debian13:nonroot
+
+LABEL org.opencontainers.image.title="devopsified" \
+      org.opencontainers.image.description="Go server production image"
 
 WORKDIR /
 
