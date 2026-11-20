@@ -14,6 +14,9 @@ End-to-End DevOps Deployment of a Golang Application.
 - Argo CD
 - Ingress and DNS
 
+ project link 
+https://devopsified-app-latest.onrender.com
+
 ## Features
 
 - Golang HTTP server
@@ -93,11 +96,3 @@ Stop the container:
 - [X] Phase 4: Kubernetes
 - [X] Phase 5: Helm
 - [X] Phase 6: GitHub Actions
-
-
-
-
-
-
-project link 
-https://devopsified-app-latest.onrender.com
