@@ -54,8 +54,6 @@ Open: http://localhost:8080
 - [ ] Phase 4: Kubernetes
 - [ ] Phase 5: Helm
 - [ ] Phase 6: GitHub Actions
-- [ ] Phase 7: Argo CD
-- [ ] Phase 8: Ingress and DNS
 
 
 
@@ -92,8 +90,6 @@ Stop the container:
 - [x] Phase 1: Environment Setup
 - [x] Phase 2: Golang Application
 - [x] Phase 3: Docker Containerization
-- [ ] Phase 4: Kubernetes
-- [ ] Phase 5: Helm
-- [ ] Phase 6: GitHub Actions
-- [ ] Phase 7: Argo CD
-- [ ] Phase 8: Ingress and DNS
+- [X] Phase 4: Kubernetes
+- [X] Phase 5: Helm
+- [X] Phase 6: GitHub Actions
