@@ -1,5 +1,5 @@
-
-# Stage 1: Build Go application
+       
+# Stage 1: Build Go application with docker
 FROM golang:1.27-alpine AS builder
 
 WORKDIR /app
